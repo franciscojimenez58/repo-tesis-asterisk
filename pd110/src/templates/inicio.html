@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    <html lang="en">
+        <h1>
+            {{ titulo }}
+        </h1>
+        <center>
+                <form method="POST" action=""> {% csrf_token %}
+                    {{reg_form.as_p}}
+                    <input type="submit" value="Registrarse" name="">
+                </form>
+            </center>
+    </html>
+{% endblock %}

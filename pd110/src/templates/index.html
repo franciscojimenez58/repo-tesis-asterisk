@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %} Login {% endblock %}
+{% block content %}
+
+<div class="container">
+	{% if form.errors %}
+        <h2> El usuario y contraseña no existen. Porfavor intentar de nuevo.</h2>
+    {% endif %}
+
+	<form method="post" class="form-signin">
+	    {% csrf_token %}
+	    <br><br>
+	 	<h3 class="form-signin-heading">Por favor ingrese</h3>
+ 		<br><br>
+    	<label for="username" >Usuario :</label>
+
+    	<input type="username" id="username" class="form-control" placeholder="Usuario" name="username" required autofocus>
+	    
+	    <br><br><br>
+
+
+	    <label for="inputPassword" >Contraseña : </label>
+	    <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Contraseña" required>
+	    
+
+	    <br><br><br>
+	      <label>
+	        <a href="#">Olvidé mi contraseña</a>
+	      </label>
+	    </div>
+
+	    
+
+	    <button class="btn btn-lg btn-primary btn-block" type="submit" value="ingresar">Entrar</button>
+	</form>
+</div> <!-- /container -->
+
+{% endblock %}

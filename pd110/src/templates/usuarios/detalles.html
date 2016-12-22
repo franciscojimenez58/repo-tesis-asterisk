@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %} Detalles usuario {% endblock %}
+{% block content %}
+
+	
+		<h1>{{ User.username }}</h1>
+		<p>Nombres: <i>{{ User.first_name }}</i></p>
+		<p>Apellidos: <i>{{ User.last_name }}</i></p>
+		<p>Correo: <i>{{ User.email }}</i></p>
+	
+	
+	<p>
+	    <a href="{% url "listarUsuarios" %}">Regresar</a>
+	</p>
+
+{% endblock %}

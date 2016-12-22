@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %} Lista de Registros {% endblock %}
+
+{% block content %}
+<ul>
+    {% for user in object_list %}
+        <li>{{ user.username }}
+            <br>
+        <a href="{% url 'actualizarUsuarios' user.id %}">edit</a>
+        <a href="{% url 'eliminarUsuarios' user.id %}">delete</a>
+        </li>
+        <br><br>
+    {% endfor %}
+</ul>
+{% endblock %}
